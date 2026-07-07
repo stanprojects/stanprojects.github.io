@@ -16,7 +16,7 @@ body {
   color: var(--text);
 }
 
-.main-container {
+.mainScreen {
   display: grid;
   grid-template-columns: 220px 1fr;
 }

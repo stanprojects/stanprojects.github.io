@@ -5,7 +5,7 @@ async function navigate(moduleName) {
 
 function initRouter() {
   document.getElementById('sidebarNav').addEventListener('click', e => {
-    const item = e.target.closest('.nav-item[data-page]');
+    const item = e.target.closest('.navItem[data-page]');
     if (item?.dataset.page) navigate(item.dataset.page);
   });
 }
