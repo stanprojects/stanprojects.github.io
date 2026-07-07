@@ -20,8 +20,3 @@ body {
   display: grid;
   grid-template-columns: 220px 1fr;
 }
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-}
