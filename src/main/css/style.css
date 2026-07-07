@@ -1,3 +1,9 @@
+[data-theme="dark"] {
+  --bg:           #000000;
+  --border:       #ffffff;
+  --text:         #ffffff;
+}
+
 html {
   font-size: 16px;
   overflow-y: scroll;
@@ -5,4 +11,17 @@ html {
 
 body {
   margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
 }

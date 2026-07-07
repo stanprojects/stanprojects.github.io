@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +15,9 @@
             <div class="nav-item" data-page="foo">
                 foo
             </div>
+            <div class="nav-item" data-page="bar">
+                bar
+            </div>
         </nav>
     </aside>
     <div class="main-area">
@@ -23,6 +26,7 @@
 </div>
 
 <script src="./src/main/js/router.js"></script>
+<script>initRouter();</script>
 <script>navigate('foo');</script>
 
 </body>
