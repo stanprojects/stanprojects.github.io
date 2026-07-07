@@ -10,23 +10,31 @@
   --text:         #000000;
 }
 
-html {
-  font-size: 16px;
-  overflow-y: scroll;
-}
-
 body {
   margin: 0;
   font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
   background: var(--bg);
   color: var(--text);
 }
 
-.mainScreen {
+.mainScreenStyle {
   display: grid;
   grid-template-columns: 220px 1fr;
 }
 
-.topBar {
+.centerContainerStyle {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.topBarStyle {
   display: flex; align-items: center; justify-content: space-between;
+}
+
+.moduleStyle {
+  overflow-y: auto;
 }
