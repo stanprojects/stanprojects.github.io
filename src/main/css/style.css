@@ -4,6 +4,12 @@
   --text:         #ffffff;
 }
 
+[data-theme="light"] {
+  --bg:           #ffffff;
+  --border:       #000000;
+  --text:         #000000;
+}
+
 html {
   font-size: 16px;
   overflow-y: scroll;
@@ -19,4 +25,8 @@ body {
 .mainScreen {
   display: grid;
   grid-template-columns: 220px 1fr;
+}
+
+.topBar {
+  display: flex; align-items: center; justify-content: space-between;
 }
