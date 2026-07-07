@@ -8,5 +8,22 @@
   <meta name="version" content="0.0.1">
 </head>
 <body>
+
+<div class="main-container">
+    <aside class="sidebar">
+        <nav class="sidebar-nav" id="sidebarNav">
+            <div class="nav-item" data-page="foo">
+                foo
+            </div>
+        </nav>
+    </aside>
+    <div class="main-area">
+        <main class="page-content" id="pageContent"></main>
+    </div>
+</div>
+
+<script src="./src/main/js/router.js"></script>
+<script>navigate('foo');</script>
+
 </body>
 </html>
