@@ -64,3 +64,27 @@ body {
   padding: 8px 16px;
   border-radius: 8px;
 }
+
+.StartBar {
+  width: 256px;
+}
+
+.Modules {
+  padding: 8px 16px;
+  flex-direction: column;
+  min-height: 0;
+  gap: 8px;
+  overflow-y: auto;
+  justify-content: flex-start;
+}
+
+.ModuleItem {
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.ModuleItem.selected {
+  background-color: var(--colors-selected);
+  color: var(--colors-primary);
+  cursor: auto;
+}
