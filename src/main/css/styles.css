@@ -102,6 +102,11 @@ body {
   background-color: var(--colors-scrim);
 }
 
+.ModuleTitle {
+  font-weight: 700;
+  padding: 0 16px 0 256px;
+}
+
 @media (max-width: 768px) {
   .MenuSwitch {
     display: block;
@@ -122,5 +127,9 @@ body {
   .Scrim.opened {
     opacity: 1;
     pointer-events: auto;
+  }
+
+  .ModuleTitle {
+    padding: 0 16px;
   }
 }

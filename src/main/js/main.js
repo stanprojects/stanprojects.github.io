@@ -26,6 +26,7 @@ const ColorsSwitch = document.getElementById('ColorsSwitch')
 const MenuSwitch = document.getElementById('MenuSwitch')
 const Scrim = document.getElementById('Scrim')
 const Modules = document.getElementById('Modules')
+const ModuleTitle = document.getElementById('ModuleTitle')
 
 function colorsOf(name) {
     return Object.values(Colors).includes(name) ? name : Colors.Dark;
@@ -57,15 +58,12 @@ function renderOpened(opened) {
     Scrim.classList.toggle('opened', _opened === true)
 }
 
-function renderModules(selected) {
-    Modules.querySelectorAll('.ModuleItem').forEach((it) => {
-        it.classList.toggle('selected', it.dataset.id === selected.id)
-    })
-}
-
 function renderModule(module) {
     _module = module
-    renderModules(module)
+    Modules.querySelectorAll('.ModuleItem').forEach((it) => {
+        it.classList.toggle('selected', it.dataset.id === module.id)
+    })
+    ModuleTitle.textContent = module.title
 //    renderModuleScreen(selected)
 }
 
@@ -125,3 +123,8 @@ window.addEventListener('popstate', () => {
 })
 
 onPopState(false)
+
+Modules.querySelectorAll('.ModuleItem').forEach((it) => {
+    const module = moduleOf(it.dataset.id)
+    it.textContent = module.button
+})
