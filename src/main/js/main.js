@@ -6,6 +6,8 @@ const Colors = Object.freeze({
 
 let _colors = undefined
 
+const ColorsSwitch = document.getElementById('ColorsSwitch')
+
 function colorsOf(name) {
     return Object.values(Colors).includes(name) ? name : Colors.Dark;
 }
@@ -16,6 +18,7 @@ function getState({ colors = _colors } = {}) {
 
 function renderColors(colors) {
     _colors = colors
+    ColorsSwitch.textContent = colors
     document.documentElement.setAttribute('data-colors', colors)
 }
 
@@ -38,6 +41,11 @@ function onPopState() {
     const colors = colorsOf(params.get('colors'))
     onStateChange({ colors: colors })
 }
+
+ColorsSwitch.addEventListener('click', () => {
+    const colors = _colors === Colors.Dark ? Colors.Light : Colors.Dark
+    onStateChange({ colors: colors })
+})
 
 window.addEventListener('popstate', () => {
     onPopState()

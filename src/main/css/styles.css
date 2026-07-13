@@ -7,3 +7,60 @@ body {
   background-color: var(--colors-background);
   color: var(--colors-text);
 }
+
+.Box {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  scrollbar-width: none;
+  scrollbar-color: #000000ff #00000000;
+  box-sizing: border-box;
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+}
+
+.Box > * {
+  grid-area: 1 / 1;
+}
+
+.FlexBox {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  scrollbar-width: none;
+  scrollbar-color: #000000ff #00000000;
+  box-sizing: border-box;
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.Clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .Clickable:hover {
+    background-color: var(--colors-focused);
+  }
+}
+
+.Clickable:active {
+  background-color: var(--colors-pressed);
+}
+
+.ColorsSwitch {
+  padding: 8px 16px;
+  border-radius: 8px;
+}
