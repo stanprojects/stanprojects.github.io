@@ -9,6 +9,7 @@ let _opened = undefined
 
 const ColorsSwitch = document.getElementById('ColorsSwitch')
 const MenuSwitch = document.getElementById('MenuSwitch')
+const Scrim = document.getElementById('Scrim')
 
 function colorsOf(name) {
     return Object.values(Colors).includes(name) ? name : Colors.Dark;
@@ -27,8 +28,8 @@ function renderColors(colors) {
 function renderOpened(opened) {
     _opened = opened
     MenuSwitch.textContent = _opened === true ? 'close' : 'menu'
-//    StartBar.classList.toggle('opened', _opened === true)
-//    Scrim.classList.toggle('opened', _opened === true)
+    StartBar.classList.toggle('opened', _opened === true)
+    Scrim.classList.toggle('opened', _opened === true)
 }
 
 function onStateChange({ colors = _colors, opened = _opened }, needsToPush = false) {
@@ -62,6 +63,12 @@ ColorsSwitch.addEventListener('click', () => {
 MenuSwitch.addEventListener('click', () => {
     const opened = _opened === true ? false : true
     onStateChange({ opened: opened })
+})
+
+Scrim.addEventListener('click', () => {
+    if (_opened === true) {
+        onStateChange({ opened: false })
+    }
 })
 
 window.addEventListener('popstate', () => {

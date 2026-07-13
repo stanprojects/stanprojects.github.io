@@ -68,6 +68,7 @@ body {
 .MenuSwitch {
   padding: 8px 16px;
   border-radius: 8px;
+  display: none;
 }
 
 .StartBar {
@@ -92,4 +93,34 @@ body {
   background-color: var(--colors-selected);
   color: var(--colors-primary);
   cursor: auto;
+}
+
+.Scrim {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--durations-animation) ease;
+  background-color: var(--colors-scrim);
+}
+
+@media (max-width: 768px) {
+  .MenuSwitch {
+    display: block;
+  }
+
+  .StartBar {
+    transform: translateX(-100%);
+    opacity: 0;
+    background-color: var(--colors-background);
+    transition: transform var(--durations-animation) ease, opacity var(--durations-animation) ease;
+  }
+
+  .StartBar.opened {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .Scrim.opened {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }

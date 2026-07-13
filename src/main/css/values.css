@@ -3,6 +3,7 @@
   --colors-primary: #1e88e5ff;
   --colors-text: var(--colors-foreground);
   --colors-scrim: #202020d0;
+  --durations-animation: 250ms;
 }
 
 [data-colors="dark"] {
