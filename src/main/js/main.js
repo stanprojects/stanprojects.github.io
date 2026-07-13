@@ -5,8 +5,10 @@ const Colors = Object.freeze({
 });
 
 let _colors = undefined
+let _opened = undefined
 
 const ColorsSwitch = document.getElementById('ColorsSwitch')
+const MenuSwitch = document.getElementById('MenuSwitch')
 
 function colorsOf(name) {
     return Object.values(Colors).includes(name) ? name : Colors.Dark;
@@ -22,9 +24,19 @@ function renderColors(colors) {
     document.documentElement.setAttribute('data-colors', colors)
 }
 
-function onStateChange({ colors = _colors }, needsToPush = false) {
+function renderOpened(opened) {
+    _opened = opened
+    MenuSwitch.textContent = _opened === true ? 'close' : 'menu'
+//    StartBar.classList.toggle('opened', _opened === true)
+//    Scrim.classList.toggle('opened', _opened === true)
+}
+
+function onStateChange({ colors = _colors, opened = _opened }, needsToPush = false) {
     if (_colors !== colors) {
         renderColors(colors)
+    }
+    if (_opened !== opened) {
+        renderOpened(opened)
     }
     const expected = getState({ colors: colors })
     if (location.hash !== expected) {
@@ -36,10 +48,10 @@ function onStateChange({ colors = _colors }, needsToPush = false) {
     }
 }
 
-function onPopState() {
+function onPopState(opened) {
     const params = new URLSearchParams(location.hash.slice(1))
     const colors = colorsOf(params.get('colors'))
-    onStateChange({ colors: colors })
+    onStateChange({ colors: colors, opened: opened })
 }
 
 ColorsSwitch.addEventListener('click', () => {
@@ -47,8 +59,13 @@ ColorsSwitch.addEventListener('click', () => {
     onStateChange({ colors: colors })
 })
 
-window.addEventListener('popstate', () => {
-    onPopState()
+MenuSwitch.addEventListener('click', () => {
+    const opened = _opened === true ? false : true
+    onStateChange({ opened: opened })
 })
 
-onPopState()
+window.addEventListener('popstate', () => {
+    onPopState(false)
+})
+
+onPopState(false)

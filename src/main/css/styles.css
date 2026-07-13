@@ -65,6 +65,11 @@ body {
   border-radius: 8px;
 }
 
+.MenuSwitch {
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
 .StartBar {
   width: 256px;
 }
