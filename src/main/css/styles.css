@@ -107,6 +107,10 @@ body {
   padding: 0 16px 0 256px;
 }
 
+.ModuleScreen {
+  padding: 0 16px 0 calc(256px + 16px);
+}
+
 @media (max-width: 768px) {
   .MenuSwitch {
     display: block;
@@ -130,6 +134,10 @@ body {
   }
 
   .ModuleTitle {
+    padding: 0 16px;
+  }
+
+  .ModuleScreen {
     padding: 0 16px;
   }
 }
