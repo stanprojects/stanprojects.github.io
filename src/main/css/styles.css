@@ -8,16 +8,31 @@ body {
   color: var(--colors-text);
 }
 
+hr {
+  border: none;
+  border-top: 1px solid var(--colors-border);
+}
+
+code {
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  padding: 2px 4px;
+  margin: 0;
+  background-color: var(--colors-selected);
+  border-radius: 8px;
+}
+
 table {
   border: 1px solid var(--colors-border);
   border-radius: 8px;
 }
 
 th {
-  background: var(--colors-border);
+  background: var(--colors-selected);
   padding: 4px 8px;
   border-bottom: 1px solid var(--colors-border);
-  border-right: 1px solid var(--colors-background);
+  border-right: 1px solid var(--colors-border);
 }
 
 td {

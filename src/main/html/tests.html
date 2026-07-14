@@ -2,6 +2,8 @@
 <h2>Bash testing tools</h2>
 <p>Three packages cover one job: check shell script behavior without a heavy framework.</p>
 
+<hr>
+
 <h3>Roles</h3>
 <table>
  <tr><th><strong>Package</strong></th><th><strong>Purpose</strong></th></tr>
@@ -10,15 +12,17 @@
  <tr><td><strong>Bashx.Mocks</strong></td><td>binary stand-ins: <code>curl</code>, <code>rg</code>, <code>cmp</code>, <code>stat</code>, <code>wc</code></td></tr>
 </table>
 
+<hr>
+
 <h3>Asserts vs Checks overlap</h3>
 <p>Both compare strings, ints, and files (<code>eq</code>, <code>ne</code>, <code>contains</code>, <code>exists</code>, <code>execs</code>…).</p>
 <p>API difference:</p>
 <pre>
-<code># Asserts — required context
+<code style="padding: 8px 16px;"># Asserts — required context
 strings/eq.sh "$CONTEXT" "$ACTUAL" "$EXPECTED"
 </code>
-
-<code># Checks — message is optional
+<br>
+<code style="padding: 8px 16px;"># Checks — message is optional
 strings/eq.sh "$ACTUAL" "$EXPECTED"            # quiet
 strings/eq.sh "$ACTUAL" "$EXPECTED" "$MESSAGE" # with text
 </code>
