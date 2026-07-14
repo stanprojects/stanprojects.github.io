@@ -54,7 +54,6 @@ function renderColors(colors) {
 
 function renderOpened(opened) {
     _opened = opened
-    MenuSwitch.textContent = _opened === true ? 'close' : 'menu'
     StartBar.classList.toggle('opened', _opened === true)
     Scrim.classList.toggle('opened', _opened === true)
 }
