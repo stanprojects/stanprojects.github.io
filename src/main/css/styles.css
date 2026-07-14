@@ -97,8 +97,12 @@ td {
 }
 
 .ModuleItem {
+  display: block;
   padding: 8px 16px;
   border-radius: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ModuleItem.selected {
@@ -115,8 +119,12 @@ td {
 }
 
 .ModuleTitle {
+  display: block;
   font-weight: 700;
   padding: 0 16px 0 256px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ModuleScreen {
