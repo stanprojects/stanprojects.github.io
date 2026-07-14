@@ -1,0 +1,52 @@
+
+table {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  background: transparent;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+tr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  background: transparent;
+  vertical-align: top;
+}
+
+th {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  background: transparent;
+  vertical-align: top;
+  text-align: left;
+}
+
+td {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  background: transparent;
+  vertical-align: top;
+  text-align: left;
+}
+
+tr > *:last-child {
+  border-right: none;
+}
+
+tr:last-child > * {
+  border-bottom: none;
+}

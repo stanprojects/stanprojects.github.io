@@ -8,41 +8,22 @@ body {
   color: var(--colors-text);
 }
 
-.Box {
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  background-color: transparent;
-  scrollbar-width: none;
-  scrollbar-color: #000000ff #00000000;
-  box-sizing: border-box;
-  display: grid;
-  min-width: 0;
-  min-height: 0;
+table {
+  border: 1px solid var(--colors-border);
+  border-radius: 8px;
 }
 
-.Box > * {
-  grid-area: 1 / 1;
+th {
+  background: var(--colors-border);
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--colors-border);
+  border-right: 1px solid var(--colors-background);
 }
 
-.FlexBox {
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  background-color: transparent;
-  scrollbar-width: none;
-  scrollbar-color: #000000ff #00000000;
-  box-sizing: border-box;
-  display: flex;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  width: fit-content;
-  height: fit-content;
-  align-items: flex-start;
-  flex-shrink: 0;
+td {
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--colors-border);
+  border-right: 1px solid var(--colors-border);
 }
 
 .Clickable {
