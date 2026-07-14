@@ -12,19 +12,20 @@
  <tr><td><strong>Bashx.Mocks</strong></td><td>binary stand-ins: <code>curl</code>, <code>rg</code>, <code>cmp</code>, <code>stat</code>, <code>wc</code></td></tr>
 </table>
 
+<br>
 <hr>
 
 <h3>Asserts vs Checks overlap</h3>
 <p>Both compare strings, ints, and files (<code>eq</code>, <code>ne</code>, <code>contains</code>, <code>exists</code>, <code>execs</code>…).</p>
 <p>API difference:</p>
-<pre>
-<code style="padding: 8px 16px;"># Asserts — required context
+<code style="padding: 8px 12px;"># Asserts — required context
 strings/eq.sh "$CONTEXT" "$ACTUAL" "$EXPECTED"
 </code>
 <br>
-<code style="padding: 8px 16px;"># Checks — message is optional
+<br>
+<code style="padding: 8px 12px;"># Checks — message is optional
 strings/eq.sh "$ACTUAL" "$EXPECTED"            # quiet
 strings/eq.sh "$ACTUAL" "$EXPECTED" "$MESSAGE" # with text
+1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890
 </code>
-</pre>
 </div>
