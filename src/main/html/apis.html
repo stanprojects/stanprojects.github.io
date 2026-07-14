@@ -1,0 +1,31 @@
+<div>
+<h2>HTTP clients for external APIs</h2>
+<p><strong>Bashx.TelegramBots</strong> and <strong>Bashx.GitHubx</strong> are thin wrappers over <code>curl</code>, with response parsing via <code>yq</code>.</p>
+
+<hr>
+
+<h3>What they cover</h3>
+<table>
+ <tr><th>Package</th><th>Endpoints</th></tr>
+ <tr><td><a href="https://github.com/stanbashx/Bashx.TelegramBots" target="_blank" rel="noopener noreferrer">TelegramBots</a></td><td><code>getMe</code>, <code>getUpdates</code>, <code>sendMessage</code>, <code>sendDocument</code></td></tr>
+ <tr><td><a href="https://github.com/stanbashx/Bashx.GitHubx" target="_blank" rel="noopener noreferrer">GitHubx</a></td><td><code>/user</code>, <code>/user/gpg_keys</code>, <code>rate_limit</code></td></tr>
+</table>
+
+<br>
+<hr>
+
+<h3>Shared pattern</h3>
+<ol>
+<li>strict argument validation (regex, length, types)</li>
+<li>response is written to a destination file (<code>dst</code>)</li>
+<li><code>dst</code> must not already exist (and must not be a symlink)</li>
+<li>HTTP <code>200</code> and non-empty JSON are checked</li>
+</ol>
+
+<hr>
+
+<p>Telegram call example:</p>
+<code style="padding: 8px 12px;">send_message.sh "$BOT_ID" "$BOT_SECRET" "$CHAT_ID" "$MESSAGE" "$DST"</code>
+<p>The GitHub token is passed as an <em>environment variable name</em>, not the value:</p>
+<code style="padding: 8px 12px;">user.sh GITHUB_TOKEN "$DST"</code>
+</div>

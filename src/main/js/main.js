@@ -9,10 +9,15 @@ const ModuleTests = Object.freeze({
   title: 'Unit tests',
 });
 
+const ModuleApis = Object.freeze({
+  id: 'apis',
+  title: 'API clients',
+});
+
 let _colors = undefined
 let _opened = undefined
 let _module = undefined
-const modules = [ModuleTests]
+const modules = [ModuleTests, ModuleApis]
 
 const ColorsSwitch = document.getElementById('ColorsSwitch')
 const MenuSwitch = document.getElementById('MenuSwitch')
