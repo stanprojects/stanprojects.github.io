@@ -4,18 +4,9 @@ const Colors = Object.freeze({
   Light: 'light',
 });
 
-const ModuleFoo = Object.freeze({
-  id: 'foo',
-  button: 'foo button',
-  title: 'foo title',
-  path: './src/main/html/foo.html',
-});
-
-const ModuleBar = Object.freeze({
-  id: 'bar',
-  button: 'bar button',
-  title: 'bar title',
-  path: './src/main/html/bar.html',
+const ModuleTests = Object.freeze({
+  id: 'tests',
+  title: 'Unit tests',
 });
 
 let _colors = undefined
@@ -35,10 +26,8 @@ function colorsOf(name) {
 
 function moduleOf(id) {
     switch (id) {
-        case ModuleBar.id:
-            return ModuleBar;
         default:
-            return ModuleFoo;
+            return ModuleTests;
     }
 }
 
@@ -72,7 +61,7 @@ function renderModule(module) {
         it.classList.toggle('selected', it.dataset.id === module.id)
     })
     ModuleTitle.textContent = module.title
-    renderModuleScreen(module.path)
+    renderModuleScreen(`./src/main/html/${module.id}.html`)
 }
 
 function onStateChange({ module = _module, colors = _colors, opened = _opened }, needsToPush = false) {
@@ -134,5 +123,5 @@ onPopState(false)
 
 Modules.querySelectorAll('.ModuleItem').forEach((it) => {
     const module = moduleOf(it.dataset.id)
-    it.textContent = module.button
+    it.textContent = module.title
 })
