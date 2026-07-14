@@ -12,6 +12,7 @@ const ModuleTests = Object.freeze({
 let _colors = undefined
 let _opened = undefined
 let _module = undefined
+const modules = [ModuleTests]
 
 const ColorsSwitch = document.getElementById('ColorsSwitch')
 const MenuSwitch = document.getElementById('MenuSwitch')
@@ -25,10 +26,10 @@ function colorsOf(name) {
 }
 
 function moduleOf(id) {
-    switch (id) {
-        default:
-            return ModuleTests;
+    for (const module of modules) {
+        if (module.id === id) return module;
     }
+    return ModuleTests;
 }
 
 function getState({ module = _module, colors = _colors } = {}) {
@@ -91,6 +92,18 @@ function onPopState(opened) {
     onStateChange({ colors: colors, module: module, opened: opened })
 }
 
+function initModules(modules) {
+  Modules.replaceChildren()
+  for (const module of modules) {
+    const it = document.createElement('div')
+    it.dataset.id = module.id
+    it.className = 'Box Clickable ModuleItem'
+    it.style.width = '100%'
+    it.textContent = module.title
+    Modules.appendChild(it)
+  }
+}
+
 ColorsSwitch.addEventListener('click', () => {
     const colors = _colors === Colors.Dark ? Colors.Light : Colors.Dark
     onStateChange({ colors: colors })
@@ -118,6 +131,8 @@ Modules.addEventListener('click', (event) => {
 window.addEventListener('popstate', () => {
     onPopState(false)
 })
+
+initModules(modules)
 
 onPopState(false)
 
