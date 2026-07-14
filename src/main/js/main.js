@@ -56,6 +56,8 @@ function renderOpened(opened) {
     _opened = opened
     StartBar.classList.toggle('opened', _opened === true)
     Scrim.classList.toggle('opened', _opened === true)
+    const path = opened ? './src/main/svg/cross.svg' : './src/main/svg/menu.svg'
+    MenuSwitch.querySelector('.Icon').style.mask = `url('${path}')`
 }
 
 async function renderModuleScreen(url) {
