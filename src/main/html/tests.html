@@ -7,9 +7,9 @@
 <h3>Roles</h3>
 <table>
  <tr><th><strong>Package</strong></th><th><strong>Purpose</strong></th></tr>
- <tr><td><strong>Bashx.Asserts</strong></td><td>contextual asserts: on failure prints actual/expected</td></tr>
- <tr><td><strong>Bashx.Checks</strong></td><td>quiet checks: optional message, no detailed diff</td></tr>
- <tr><td><strong>Bashx.Mocks</strong></td><td>binary stand-ins: <code>curl</code>, <code>rg</code>, <code>cmp</code>, <code>stat</code>, <code>wc</code></td></tr>
+ <tr><td><a href="https://github.com/stanbashx/Bashx.Asserts" target="_blank" rel="noopener noreferrer">Bashx.Asserts</a></td><td>contextual asserts: on failure prints actual/expected</td></tr>
+ <tr><td><a href="https://github.com/stanbashx/Bashx.Checks" target="_blank" rel="noopener noreferrer">Bashx.Checks</a></td><td>quiet checks: optional message, no detailed diff</td></tr>
+ <tr><td><a href="https://github.com/stanbashx/Bashx.Mocks" target="_blank" rel="noopener noreferrer">Bashx.Mocks</a></td><td>binary stand-ins: <code>curl</code>, <code>rg</code>, <code>cmp</code>, <code>stat</code>, <code>wc</code></td></tr>
 </table>
 
 <br>
@@ -26,6 +26,5 @@ strings/eq.sh "$CONTEXT" "$ACTUAL" "$EXPECTED"
 <code style="padding: 8px 12px;"># Checks — message is optional
 strings/eq.sh "$ACTUAL" "$EXPECTED"            # quiet
 strings/eq.sh "$ACTUAL" "$EXPECTED" "$MESSAGE" # with text
-1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890
 </code>
 </div>

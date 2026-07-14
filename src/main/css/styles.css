@@ -8,6 +8,17 @@ body {
   color: var(--colors-text);
 }
 
+a {
+  margin: 0;
+  padding: 0;
+  color: var(--colors-primary);
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1.0;
+  letter-spacing: 0px;
+  cursor: pointer;
+}
+
 hr {
   border: none;
   border-top: 1px solid var(--colors-border);
