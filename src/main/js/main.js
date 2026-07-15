@@ -90,7 +90,7 @@ function onStateChange({ module = _module, colors = _colors, opened = _opened },
     if (_opened !== opened) {
         renderOpened(opened)
     }
-    const expected = getState({ colors: colors })
+    const expected = getState({ module: module, colors: colors })
     if (location.hash !== expected) {
         if (needsToPush) {
             history.pushState(null, '', expected)
