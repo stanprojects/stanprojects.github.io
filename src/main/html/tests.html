@@ -12,18 +12,16 @@
  <tr><td><a href="https://github.com/stanbashx/Bashx.Mocks" target="_blank" rel="noopener noreferrer">Mocks</a></td><td>binary stand-ins: <code>curl</code>, <code>rg</code>, <code>cmp</code>, <code>stat</code>, <code>wc</code></td></tr>
 </table>
 
-<br>
 <hr>
 
 <h3>Asserts vs Checks overlap</h3>
 <p>Both compare strings, ints, and files (<code>eq</code>, <code>ne</code>, <code>contains</code>, <code>exists</code>, <code>execs</code>…).</p>
 <p>API difference:</p>
-<code style="padding: 8px 12px;"># Asserts — required context
+<code class="block"># Asserts — required context
 strings/eq.sh "$CONTEXT" "$ACTUAL" "$EXPECTED"
 </code>
-<br>
-<br>
-<code style="padding: 8px 12px;"># Checks — message is optional
+
+<code class="block"># Checks — message is optional
 strings/eq.sh "$ACTUAL" "$EXPECTED"            # quiet
 strings/eq.sh "$ACTUAL" "$EXPECTED" "$MESSAGE" # with text
 </code>
