@@ -30,6 +30,7 @@ const Scrim = document.getElementById('Scrim')
 const Modules = document.getElementById('Modules')
 const ModuleTitle = document.getElementById('ModuleTitle')
 const ModuleScreen = document.getElementById('ModuleScreen')
+const StartBar = document.getElementById('StartBar')
 
 function colorsOf(name) {
     return Object.values(Colors).includes(name) ? name : Colors.Dark;
