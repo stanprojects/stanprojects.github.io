@@ -8,6 +8,30 @@ body {
   color: var(--colors-text);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 8px 0;
+}
+
+p {
+  margin: 0;
+  padding: 8px 0;
+}
+
+ol {
+  margin: 0;
+  padding: 8px 0 8px 32px;
+  list-style: decimal;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   margin: 0;
   padding: 0;
@@ -20,6 +44,8 @@ a {
 }
 
 hr {
+  margin: 8px 0;
+  padding: 0;
   border: none;
   border-top: 1px solid var(--colors-border);
 }
@@ -40,6 +66,7 @@ code {
 }
 
 table {
+  margin: 4px 0;
   border: 1px solid var(--colors-border);
   border-radius: 8px;
 }
@@ -128,7 +155,7 @@ td {
 }
 
 .ModuleScreen {
-  padding: 0 16px 0 calc(256px + 16px);
+  padding: 8px 16px 8px calc(256px + 16px);
   overflow-x: hidden;
 }
 
@@ -164,6 +191,6 @@ td {
   }
 
   .ModuleScreen {
-    padding: 0 16px;
+    padding: 8px 16px;
   }
 }
