@@ -26,10 +26,10 @@ const modules = [ModuleTests, ModuleApis, ModuleSecrets]
 
 const ColorsSwitch = document.getElementById('ColorsSwitch')
 const MenuSwitch = document.getElementById('MenuSwitch')
-const Scrim = document.getElementById('Scrim')
 const ModuleList = document.getElementById('ModuleList')
-const ModuleTitle = document.getElementById('ModuleTitle')
 const ModuleScreen = document.getElementById('ModuleScreen')
+const ModuleTitle = document.getElementById('ModuleTitle')
+const Scrim = document.getElementById('Scrim')
 const StartBar = document.getElementById('StartBar')
 
 function colorsOf(name) {
@@ -44,7 +44,7 @@ function moduleOf(id) {
 }
 
 function getState({ module = _module, colors = _colors } = {}) {
-    return `#module=${_module.id}&colors=${colors}`
+    return `#module=${module.id}&colors=${colors}`
 }
 
 function renderColors(colors) {
