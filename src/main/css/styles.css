@@ -120,7 +120,7 @@ td {
 }
 
 .StartBar {
-  width: 256px;
+  width: var(--width-start-bar);
 }
 
 .ModuleList {
@@ -157,14 +157,14 @@ td {
 .ModuleTitle {
   display: block;
   font-weight: 700;
-  padding: 0 16px 0 256px;
+  padding: 0 16px 0 var(--width-start-bar);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .ModuleScreen {
-  padding: 8px 16px 8px calc(256px + 16px);
+  padding: 8px 16px 8px calc(var(--width-start-bar) + 16px);
   overflow-x: hidden;
 }
 

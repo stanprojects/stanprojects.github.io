@@ -4,6 +4,7 @@
   --colors-text: var(--colors-foreground);
   --colors-scrim: #202020d0;
   --durations-animation: 250ms;
+  --width-start-bar: 256px;
 }
 
 [data-colors="dark"] {
