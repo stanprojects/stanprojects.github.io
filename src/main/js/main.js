@@ -1,22 +1,22 @@
 
 const Colors = Object.freeze({
-  Dark: 'dark',
-  Light: 'light',
+    Dark: 'dark',
+    Light: 'light',
 });
 
 const ModuleTests = Object.freeze({
-  id: 'tests',
-  title: 'Unit tests',
+    id: 'tests',
+    title: 'Unit tests',
 });
 
 const ModuleApis = Object.freeze({
-  id: 'apis',
-  title: 'API clients',
+    id: 'apis',
+    title: 'API clients',
 });
 
 const ModuleSecrets = Object.freeze({
-  id: 'secrets',
-  title: 'Secrets and hashes',
+    id: 'secrets',
+    title: 'Secrets and hashes',
 });
 
 let _colors = undefined
@@ -108,15 +108,15 @@ function onPopState(opened) {
 }
 
 function initModules(modules) {
-  ModuleList.replaceChildren()
-  for (const module of modules) {
-    const it = document.createElement('div')
-    it.dataset.id = module.id
-    it.className = 'Box Clickable ModuleItem'
-    it.style.width = '100%'
-    it.textContent = module.title
-    ModuleList.appendChild(it)
-  }
+    ModuleList.replaceChildren()
+    for (const module of modules) {
+        const it = document.createElement('div')
+        it.dataset.id = module.id
+        it.className = 'Box Clickable ModuleItem'
+        it.style.width = '100%'
+        it.textContent = module.title
+        ModuleList.appendChild(it)
+    }
 }
 
 ColorsSwitch.addEventListener('click', () => {
