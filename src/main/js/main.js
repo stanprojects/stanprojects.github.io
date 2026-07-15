@@ -27,7 +27,7 @@ const modules = [ModuleTests, ModuleApis, ModuleSecrets]
 const ColorsSwitch = document.getElementById('ColorsSwitch')
 const MenuSwitch = document.getElementById('MenuSwitch')
 const Scrim = document.getElementById('Scrim')
-const Modules = document.getElementById('Modules')
+const ModuleList = document.getElementById('ModuleList')
 const ModuleTitle = document.getElementById('ModuleTitle')
 const ModuleScreen = document.getElementById('ModuleScreen')
 const StartBar = document.getElementById('StartBar')
@@ -73,7 +73,7 @@ async function renderModuleScreen(url) {
 
 function renderModule(module) {
     _module = module
-    Modules.querySelectorAll('.ModuleItem').forEach((it) => {
+    ModuleList.querySelectorAll('.ModuleItem').forEach((it) => {
         it.classList.toggle('selected', it.dataset.id === module.id)
     })
     ModuleTitle.textContent = module.title
@@ -108,14 +108,14 @@ function onPopState(opened) {
 }
 
 function initModules(modules) {
-  Modules.replaceChildren()
+  ModuleList.replaceChildren()
   for (const module of modules) {
     const it = document.createElement('div')
     it.dataset.id = module.id
     it.className = 'Box Clickable ModuleItem'
     it.style.width = '100%'
     it.textContent = module.title
-    Modules.appendChild(it)
+    ModuleList.appendChild(it)
   }
 }
 
@@ -135,7 +135,7 @@ Scrim.addEventListener('click', () => {
     }
 })
 
-Modules.addEventListener('click', (event) => {
+ModuleList.addEventListener('click', (event) => {
     const it = event.target.closest('.ModuleItem')
     if (!it) return
     if (_module.id !== it.dataset.id) {
@@ -150,8 +150,3 @@ window.addEventListener('popstate', () => {
 initModules(modules)
 
 onPopState(false)
-
-Modules.querySelectorAll('.ModuleItem').forEach((it) => {
-    const module = moduleOf(it.dataset.id)
-    it.textContent = module.title
-})

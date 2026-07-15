@@ -114,7 +114,7 @@ td {
   width: 256px;
 }
 
-.Modules {
+.ModuleList {
   padding: 8px 16px;
   flex-direction: column;
   min-height: 0;
