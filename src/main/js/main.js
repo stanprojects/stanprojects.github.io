@@ -50,6 +50,9 @@ function renderColors(colors) {
     _colors = colors
     ColorsSwitch.textContent = colors
     document.documentElement.setAttribute('data-colors', colors)
+    document.querySelector('link[rel="icon"]').href = colors === Colors.Dark
+        ? './src/main/svg/favicon_dark.svg'
+        : './src/main/svg/favicon_light.svg'
 }
 
 function renderOpened(opened) {
